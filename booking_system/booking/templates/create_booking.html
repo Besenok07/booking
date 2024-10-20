@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mt-4">Створити бронювання</h1>
+<form method="post" class="mt-3">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="btn btn-success">Зберегти бронювання</button>
+</form>
+<a href="{% url 'booking_list' %}" class="btn btn-secondary mt-3">Переглянути бронювання</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mt-4">Список бронювань</h1>
+<ul class="list-group">
+    {% for booking in bookings %}
+        <li class="list-group-item">
+            <strong>{{ booking.user.username }}</strong> забронював <em>{{ booking.room.name }}</em> з {{ booking.start_date }} по {{ booking.end_date }}
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_booking' %}" class="btn btn-primary mt-3">Створити нове бронювання</a>
+{% endblock %}

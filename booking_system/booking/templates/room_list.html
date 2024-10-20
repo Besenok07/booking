@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mt-4">Список кімнат</h1>
+<ul class="list-group">
+    {% for room in rooms %}
+        <li class="list-group-item">
+            <h5>{{ room.name }}</h5>
+            <p>Вмістимість: {{ room.capacity }}</p>
+            <p>Ціна: {{ room.price }} грн</p>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_booking' %}" class="btn btn-primary mt-3">Створити бронювання</a>
+{% endblock %}

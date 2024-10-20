@@ -1,0 +1,6 @@
+<h1>Список доступності</h1>
+<ul>
+    {% for availability in availabilities %}
+        <li>{{ availability.room.name }} - {{ availability.date }} - {{ 'Доступно' if availability.is_available else 'Недоступно' }}</li>
+    {% endfor %}
+</ul>
